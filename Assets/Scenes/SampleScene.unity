@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 50952719}
   - component: {fileID: 50952721}
   - component: {fileID: 50952720}
+  - component: {fileID: 50952722}
   m_Layer: 5
   m_Name: Cost Text
   m_TagString: Untagged
@@ -258,6 +259,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50952718}
   m_CullTransparentMesh: 1
+--- !u!225 &50952722
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50952718}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &114032904
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +552,7 @@ GameObject:
   - component: {fileID: 137559218}
   - component: {fileID: 137559220}
   - component: {fileID: 137559219}
+  - component: {fileID: 137559221}
   m_Layer: 5
   m_Name: Gainz Shop
   m_TagString: Untagged
@@ -607,6 +621,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137559217}
   m_CullTransparentMesh: 1
+--- !u!114 &137559221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137559217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5fdbe20d7224d4b8853b51b2eeb606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &247638007
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +720,7 @@ GameObject:
   - component: {fileID: 271605456}
   - component: {fileID: 271605458}
   - component: {fileID: 271605457}
+  - component: {fileID: 271605459}
   m_Layer: 5
   m_Name: Cost Text
   m_TagString: Untagged
@@ -818,6 +845,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271605455}
   m_CullTransparentMesh: 1
+--- !u!225 &271605459
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271605455}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &291342982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1166,7 @@ GameObject:
   - component: {fileID: 330052761}
   - component: {fileID: 330052763}
   - component: {fileID: 330052762}
+  - component: {fileID: 330052764}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1251,6 +1291,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330052760}
   m_CullTransparentMesh: 1
+--- !u!225 &330052764
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330052760}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &345926410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1562,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RArm: {fileID: 2032419852}
   LArm: {fileID: 721695375}
+  weights: 5
+  bicepSize: 31
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,6 +2031,7 @@ GameObject:
   - component: {fileID: 753008628}
   - component: {fileID: 753008630}
   - component: {fileID: 753008629}
+  - component: {fileID: 753008631}
   m_Layer: 0
   m_Name: Dumbbell Pic (1)
   m_TagString: Untagged
@@ -2043,6 +2098,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753008627}
   m_CullTransparentMesh: 1
+--- !u!225 &753008631
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753008627}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &801140095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2189,7 @@ GameObject:
   - component: {fileID: 805459310}
   - component: {fileID: 805459312}
   - component: {fileID: 805459311}
+  - component: {fileID: 805459313}
   m_Layer: 0
   m_Name: Bicep Pic
   m_TagString: Untagged
@@ -2188,6 +2256,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805459309}
   m_CullTransparentMesh: 1
+--- !u!225 &805459313
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805459309}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &809261893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2355,7 @@ GameObject:
   - component: {fileID: 828890645}
   - component: {fileID: 828890647}
   - component: {fileID: 828890646}
+  - component: {fileID: 828890648}
   m_Layer: 0
   m_Name: Dumbbell Pic
   m_TagString: Untagged
@@ -2341,6 +2422,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828890644}
   m_CullTransparentMesh: 1
+--- !u!225 &828890648
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828890644}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &898594374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,6 +2760,7 @@ GameObject:
   - component: {fileID: 1019160047}
   - component: {fileID: 1019160049}
   - component: {fileID: 1019160048}
+  - component: {fileID: 1019160050}
   m_Layer: 5
   m_Name: Cost Text
   m_TagString: Untagged
@@ -2791,6 +2885,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019160046}
   m_CullTransparentMesh: 1
+--- !u!225 &1019160050
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019160046}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1077648203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,6 +2908,7 @@ GameObject:
   - component: {fileID: 1077648204}
   - component: {fileID: 1077648206}
   - component: {fileID: 1077648205}
+  - component: {fileID: 1077648207}
   m_Layer: 5
   m_Name: Cost Text
   m_TagString: Untagged
@@ -2926,6 +3033,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077648203}
   m_CullTransparentMesh: 1
+--- !u!225 &1077648207
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077648203}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1198483333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,6 +3402,7 @@ GameObject:
   - component: {fileID: 1560548026}
   - component: {fileID: 1560548028}
   - component: {fileID: 1560548027}
+  - component: {fileID: 1560548029}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3407,6 +3527,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560548025}
   m_CullTransparentMesh: 1
+--- !u!225 &1560548029
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560548025}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1677825138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3680,6 +3812,7 @@ GameObject:
   - component: {fileID: 1724802520}
   - component: {fileID: 1724802522}
   - component: {fileID: 1724802521}
+  - component: {fileID: 1724802523}
   m_Layer: 0
   m_Name: Bicep Pic
   m_TagString: Untagged
@@ -3746,6 +3879,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724802519}
   m_CullTransparentMesh: 1
+--- !u!225 &1724802523
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724802519}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1797176876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,6 +3902,7 @@ GameObject:
   - component: {fileID: 1797176877}
   - component: {fileID: 1797176879}
   - component: {fileID: 1797176878}
+  - component: {fileID: 1797176880}
   m_Layer: 5
   m_Name: Cost Text
   m_TagString: Untagged
@@ -3881,6 +4027,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797176876}
   m_CullTransparentMesh: 1
+--- !u!225 &1797176880
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797176876}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1807311989
 GameObject:
   m_ObjectHideFlags: 0
@@ -4066,6 +4224,7 @@ GameObject:
   - component: {fileID: 1968674519}
   - component: {fileID: 1968674521}
   - component: {fileID: 1968674520}
+  - component: {fileID: 1968674522}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4190,6 +4349,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968674518}
   m_CullTransparentMesh: 1
+--- !u!225 &1968674522
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968674518}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1986161636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4431,6 +4602,7 @@ GameObject:
   - component: {fileID: 2029828582}
   - component: {fileID: 2029828584}
   - component: {fileID: 2029828583}
+  - component: {fileID: 2029828585}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4555,6 +4727,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029828581}
   m_CullTransparentMesh: 1
+--- !u!225 &2029828585
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029828581}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2032419852
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,6 +5079,7 @@ GameObject:
   - component: {fileID: 2081284425}
   - component: {fileID: 2081284427}
   - component: {fileID: 2081284426}
+  - component: {fileID: 2081284428}
   m_Layer: 0
   m_Name: GIGACHAD
   m_TagString: Untagged
@@ -4960,6 +5145,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081284424}
   m_CullTransparentMesh: 1
+--- !u!225 &2081284428
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081284424}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2093450839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5004,12 +5201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4a862b86d6b470aa65bad592bca0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weights: 5
-  bicepSize: 31
   gainz: 0
   gainzText: {fileID: 129775250}
   weightsText: {fileID: 1198483335}
   sizeText: {fileID: 1457116436}
+  gainzShop: {fileID: 0}
+  dan: {fileID: 0}
 --- !u!1 &2096303792
 GameObject:
   m_ObjectHideFlags: 0
@@ -5098,6 +5295,7 @@ GameObject:
   - component: {fileID: 2133491586}
   - component: {fileID: 2133491588}
   - component: {fileID: 2133491587}
+  - component: {fileID: 2133491589}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5222,3 +5420,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133491585}
   m_CullTransparentMesh: 1
+--- !u!225 &2133491589
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133491585}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

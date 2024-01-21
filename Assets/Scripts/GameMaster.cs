@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class GameMaster : MonoBehaviour
 {
-    public int weights;
-    public float bicepSize;
-
     private int gain;
     public int gainz = 0;
 
@@ -16,9 +14,12 @@ public class GameMaster : MonoBehaviour
     public TextMeshProUGUI weightsText;
     public TextMeshProUGUI sizeText;
 
+    public GameObject dan;
+    private Dan danScript;
+
     public void Awake()
     {
-        
+        danScript = dan.GetComponent<Dan>();
     }
 
     public void Start()
@@ -29,18 +30,27 @@ public class GameMaster : MonoBehaviour
     public void Update()
     {
 
-        gain = (int)(weights * (bicepSize - 30));
+        gain = (int)(danScript.weights * (danScript.bicepSize - 30));
 
         gainzText.text = "Gainz : " + gainz.ToString();
-        weightsText.text = "Weights : " + weights.ToString() + "lb";
-        sizeText.text = "Bicep Size : " + (bicepSize).ToString() + "cm";
+        weightsText.text = "Weights : " + danScript.weights.ToString() + "lb";
+        sizeText.text = "Bicep Size : " + (danScript.bicepSize).ToString() + "cm";
 
-        if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.RightArrow))
+        if (MouseDetector.mouseDetected) return;
+
+        if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1) ||
+            Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.RightArrow))
         {
-            gainz += gain*10;
+            gainz += gain * 10;
         }
-        else if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftArrow)) gainz += gain;
-        else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.RightArrow)) gainz += gain;
+        else if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            gainz += gain;
+        }
+        else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            gainz += gain;
+        }
     }
 
 }

@@ -14,6 +14,9 @@ public class Dan : MonoBehaviour
     private bool rGainz;
     private bool lGainz;
 
+    public int weights;
+    public float bicepSize;
+
     private void Awake()
     {
         RAnim = RArm.GetComponent<Animator>();
@@ -23,6 +26,8 @@ public class Dan : MonoBehaviour
     void Update()
     {
         //LAnim.SetBool("L_Gainz", lGainz);
+
+        if (MouseDetector.mouseDetected) return;
 
         if (Input.GetMouseButtonDown(0))
         {
