@@ -22,23 +22,69 @@ public class ShopMaster : MonoBehaviour
     public TextMeshProUGUI RSizeCostText;
     public TextMeshProUGUI LSizeCostText;
 
+    public float weightSizeIncrease;
+    public float bicepSizeIncrease;
+    public float weightSizeDecrease;
+
     private void Awake()
     {
         gameMasterScript = gameMaster.GetComponent<GameMaster>();
     }
 
-    public void Purchase(string data)
+    public void Purchase(int type)
     {
-        data.Split(",");
-        int type = (int) data[0]; // 1-rw, 2-lw, 3-rs, 4-ls
-        int change = (int) data[1];
-        int cost = (int) data[2];
+        switch (type)
+        {
+            case 1:
 
-        if (GameMaster.gainz < cost) return;
+                if (GameMaster.gainz < RWeightsCost) return;
 
-        gameMasterScript.danScript.RWeights += 5;
-        GameMaster.gainz -= cost;
-        cost = (int) (cost * 1.7f);
+                gameMasterScript.danScript.RWeights += 5;
+                gameMasterScript.danScript.RWeight.transform.localScale = new Vector2(gameMasterScript.danScript.RWeight.transform.localScale.x + weightSizeIncrease, gameMasterScript.danScript.RWeight.transform.localScale.y + weightSizeIncrease);
+
+                GameMaster.gainz -= RWeightsCost;
+                RWeightsCost = (int) (RWeightsCost * 1.3f);
+                RWeightsCostText.text = "Cost: " + RWeightsCost + " Gainz";
+                break;
+            case 2:
+
+                if (GameMaster.gainz < LWeightsCost) return;
+
+                gameMasterScript.danScript.LWeights += 5;
+                gameMasterScript.danScript.LWeight.transform.localScale = new Vector2(gameMasterScript.danScript.LWeight.transform.localScale.x + weightSizeIncrease, gameMasterScript.danScript.LWeight.transform.localScale.y + weightSizeIncrease);
+
+                GameMaster.gainz -= LWeightsCost;
+                LWeightsCost = (int)(LWeightsCost * 1.3f);
+                LWeightsCostText.text = "Cost: " + LWeightsCost + " Gainz";
+                break;
+            case 3:
+
+                if (GameMaster.gainz < RSizeCost) return;
+
+                gameMasterScript.danScript.RBicepSize += 0.5f;
+                gameMasterScript.danScript.RBicep.transform.localScale = new Vector2(gameMasterScript.danScript.RBicep.transform.localScale.x + bicepSizeIncrease, 1);
+                gameMasterScript.danScript.RWeight.transform.localScale = new Vector2(gameMasterScript.danScript.RWeight.transform.localScale.x - weightSizeDecrease, gameMasterScript.danScript.RWeight.transform.localScale.y);
+
+                GameMaster.gainz -= RSizeCost;
+                RSizeCost = (int)(RSizeCost * 1.5f);
+                RSizeCostText.text = "Cost: " + RSizeCost + " Gainz";
+                break;
+            case 4:
+
+                if (GameMaster.gainz < LSizeCost) return;
+
+                gameMasterScript.danScript.LBicepSize += 0.5f;
+                gameMasterScript.danScript.LBicep.transform.localScale = new Vector2(gameMasterScript.danScript.LBicep.transform.localScale.x + bicepSizeIncrease, 1);
+                gameMasterScript.danScript.LWeight.transform.localScale = new Vector2(gameMasterScript.danScript.LWeight.transform.localScale.x - weightSizeDecrease, gameMasterScript.danScript.LWeight.transform.localScale.y);
+
+                GameMaster.gainz -= LSizeCost;
+                LSizeCost = (int)(LSizeCost * 1.5f);
+                LSizeCostText.text = "Cost: " + LSizeCost + " Gainz";
+                break;
+
+            default:
+                break;
+        }
     }
 
 }

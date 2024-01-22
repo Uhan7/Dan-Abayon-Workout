@@ -24,6 +24,8 @@ public class GameMaster : MonoBehaviour
     public void Awake()
     {
         danScript = dan.GetComponent<Dan>();
+
+
     }
 
     public void Start()
@@ -33,7 +35,6 @@ public class GameMaster : MonoBehaviour
 
     public void Update()
     {
-
         RGain = (int)(danScript.RWeights * (danScript.RBicepSize - 30));
         LGain = (int)(danScript.LWeights * (danScript.LBicepSize - 30));
 

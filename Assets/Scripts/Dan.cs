@@ -11,6 +11,12 @@ public class Dan : MonoBehaviour
     public GameObject RArm;
     public GameObject LArm;
 
+    public GameObject RBicep;
+    public GameObject LBicep;
+
+    public GameObject RWeight;
+    public GameObject LWeight;
+
     public int RWeights;
     public int LWeights;
 

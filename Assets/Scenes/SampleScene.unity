@@ -182,7 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 9 Gainz'
+  m_text: 'Cost: 99 Gainz'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -647,14 +647,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMaster: {fileID: 2093450839}
-  RWeightsCost: 50
-  LWeightsCost: 0
-  RSizeCost: 0
-  LSizeCost: 0
-  RWeightsCostText: {fileID: 0}
-  LWeightsCostText: {fileID: 0}
-  RSizeCostText: {fileID: 0}
-  LSizeCostText: {fileID: 0}
+  RWeightsCost: 99
+  LWeightsCost: 99
+  RSizeCost: 900
+  LSizeCost: 900
+  RWeightsCostText: {fileID: 50952720}
+  LWeightsCostText: {fileID: 271605457}
+  RSizeCostText: {fileID: 1077648205}
+  LSizeCostText: {fileID: 1019160048}
+  weightSizeIncrease: 0.08
+  bicepSizeIncrease: 0.03
+  weightSizeDecrease: 0.048
 --- !u!1 &247638007
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 9 Gainz'
+  m_text: 'Cost: 99 Gainz'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -1138,7 +1141,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 326438200}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 137559222}
+        m_TargetAssemblyTypeName: ShopMaster, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &326438200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,7 +1502,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 407920588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 137559222}
+        m_TargetAssemblyTypeName: ShopMaster, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &407920588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1584,6 +1611,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RArm: {fileID: 2032419852}
   LArm: {fileID: 721695375}
+  RBicep: {fileID: 2096303792}
+  LBicep: {fileID: 898594374}
+  RWeight: {fileID: 809261893}
+  LWeight: {fileID: 1993391219}
   RWeights: 5
   LWeights: 5
   RBicepSize: 31
@@ -2832,7 +2863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 9 Gainz'
+  m_text: 'Cost: 900 Gainz'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -2980,7 +3011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 9 Gainz'
+  m_text: 'Cost: 900 Gainz'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -3127,7 +3158,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Weights: 5lbs'
+  m_text: 'Weights: 5 | 5 lb'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3262,7 +3293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bicep Size: 1cm'
+  m_text: 'Bicep Size: 31 | 31cm'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3648,7 +3679,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1677825141}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 137559222}
+        m_TargetAssemblyTypeName: ShopMaster, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1677825141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5055,15 +5098,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 137559222}
-        m_TargetAssemblyTypeName: ShopFunctions, Assembly-CSharp
-        m_MethodName: RWeightIncrease
-        m_Mode: 1
+        m_TargetAssemblyTypeName: ShopMaster, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1,5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2063231180
