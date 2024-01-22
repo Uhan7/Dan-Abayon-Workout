@@ -11,11 +11,11 @@ public class Dan : MonoBehaviour
     public GameObject RArm;
     public GameObject LArm;
 
-    private bool rGainz;
-    private bool lGainz;
+    public int RWeights;
+    public int LWeights;
 
-    public int weights;
-    public float bicepSize;
+    public float RBicepSize;
+    public float LBicepSize;
 
     private void Awake()
     {
@@ -25,7 +25,6 @@ public class Dan : MonoBehaviour
 
     void Update()
     {
-        //LAnim.SetBool("L_Gainz", lGainz);
 
         if (MouseDetector.mouseDetected) return;
 

@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 137559220}
   - component: {fileID: 137559219}
   - component: {fileID: 137559221}
+  - component: {fileID: 137559222}
   m_Layer: 5
   m_Name: Gainz Shop
   m_TagString: Untagged
@@ -633,6 +634,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5fdbe20d7224d4b8853b51b2eeb606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &137559222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137559217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6a837de187641c0be8fac3b98e0ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMaster: {fileID: 2093450839}
+  RWeightsCost: 50
+  LWeightsCost: 0
+  RSizeCost: 0
+  LSizeCost: 0
+  RWeightsCostText: {fileID: 0}
+  LWeightsCostText: {fileID: 0}
+  RSizeCostText: {fileID: 0}
+  LSizeCostText: {fileID: 0}
 --- !u!1 &247638007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,8 +1584,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RArm: {fileID: 2032419852}
   LArm: {fileID: 721695375}
-  weights: 5
-  bicepSize: 31
+  RWeights: 5
+  LWeights: 5
+  RBicepSize: 31
+  LBicepSize: 31
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,7 +3104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 240}
+  m_AnchoredPosition: {x: 130, y: 240}
   m_SizeDelta: {x: 900, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198483335
@@ -3130,8 +3154,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3215,7 +3239,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 160}
+  m_AnchoredPosition: {x: 130, y: 160}
   m_SizeDelta: {x: 900, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457116436
@@ -3265,8 +3289,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5029,7 +5053,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2063231180}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 137559222}
+        m_TargetAssemblyTypeName: ShopFunctions, Assembly-CSharp
+        m_MethodName: RWeightIncrease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2063231180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5201,12 +5237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4a862b86d6b470aa65bad592bca0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gainz: 0
   gainzText: {fileID: 129775250}
   weightsText: {fileID: 1198483335}
   sizeText: {fileID: 1457116436}
-  gainzShop: {fileID: 0}
-  dan: {fileID: 0}
+  dan: {fileID: 465137666}
+  danScript: {fileID: 0}
 --- !u!1 &2096303792
 GameObject:
   m_ObjectHideFlags: 0
