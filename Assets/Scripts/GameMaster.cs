@@ -19,7 +19,7 @@ public class GameMaster : MonoBehaviour
     public GameObject dan;
     public Dan danScript;
 
-    private bool useArrowKeys;
+    public static bool useArrowKeys;
 
     public void Awake()
     {
@@ -39,8 +39,8 @@ public class GameMaster : MonoBehaviour
         LGain = (int)(danScript.LWeights * (danScript.LBicepSize - 30));
 
         gainzText.text = "Gainz : " + gainz.ToString();
-        weightsText.text = "Weights : " + danScript.RWeights.ToString() + " | " + danScript.LWeights.ToString() + " lb";
-        sizeText.text = "Bicep Size : " + danScript.RBicepSize.ToString() + " | " + danScript.LBicepSize.ToString() + " cm";
+        weightsText.text = "Weights : " + danScript.RWeights.ToString() + " lb | " + danScript.LWeights.ToString() + " lb";
+        sizeText.text = "Bicep Size : " + danScript.RBicepSize.ToString() + " cm | " + danScript.LBicepSize.ToString() + " cm";
 
         if (MouseDetector.mouseDetected) return;
 
@@ -57,6 +57,12 @@ public class GameMaster : MonoBehaviour
         {
             gainz += LGain;
         }
+    }
+
+    public void UseArrowKeysButton()
+    {
+        if (!useArrowKeys) useArrowKeys = true;
+        else if (useArrowKeys) useArrowKeys = false;
     }
 
 }

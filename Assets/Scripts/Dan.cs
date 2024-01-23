@@ -34,19 +34,19 @@ public class Dan : MonoBehaviour
 
         if (MouseDetector.mouseDetected) return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && !GameMaster.useArrowKeys || Input.GetKey(KeyCode.LeftArrow) && GameMaster.useArrowKeys)
         {
             StartCoroutine(RightGainz(true));
         }
-        else if (Input.GetMouseButtonUp(0))
+        else
         {
             StartCoroutine(RightGainz(false));
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1) && !GameMaster.useArrowKeys || Input.GetKey(KeyCode.RightArrow) && GameMaster.useArrowKeys)
         {
             StartCoroutine(LeftGainz(true));
         }
-        else if (Input.GetMouseButtonUp(1))
+        else
         {
             StartCoroutine(LeftGainz(false));
         }
@@ -56,14 +56,14 @@ public class Dan : MonoBehaviour
     IEnumerator RightGainz(bool state)
     {
         RAnim.SetBool("R_Gainz", state);
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.1f);
         //stuff
     }
 
     IEnumerator LeftGainz(bool state)
     {
         LAnim.SetBool("L_Gainz", state);
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.1f);
         //stuff
     }
 
