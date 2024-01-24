@@ -31,6 +31,14 @@ public class ShopMaster : MonoBehaviour
         gameMasterScript = gameMaster.GetComponent<GameMaster>();
     }
 
+    private void Start()
+    {
+        RWeightsCostText.text = "Cost: " + RWeightsCost + " Gainz";
+        LWeightsCostText.text = "Cost: " + LWeightsCost + " Gainz";
+        RSizeCostText.text = "Cost: " + RSizeCost + " Gainz";
+        LSizeCostText.text = "Cost: " + LSizeCost + " Gainz";
+    }
+
     public void Purchase(int type)
     {
         switch (type)
@@ -43,7 +51,7 @@ public class ShopMaster : MonoBehaviour
                 gameMasterScript.danScript.RWeight.transform.localScale = new Vector2(gameMasterScript.danScript.RWeight.transform.localScale.x + weightSizeIncrease, gameMasterScript.danScript.RWeight.transform.localScale.y + weightSizeIncrease);
 
                 GameMaster.gainz -= RWeightsCost;
-                RWeightsCost = (int) (RWeightsCost * 1.3f);
+                RWeightsCost = (int) (RWeightsCost * 1.2f);
                 RWeightsCostText.text = "Cost: " + RWeightsCost + " Gainz";
                 break;
             case 2:
@@ -54,7 +62,7 @@ public class ShopMaster : MonoBehaviour
                 gameMasterScript.danScript.LWeight.transform.localScale = new Vector2(gameMasterScript.danScript.LWeight.transform.localScale.x + weightSizeIncrease, gameMasterScript.danScript.LWeight.transform.localScale.y + weightSizeIncrease);
 
                 GameMaster.gainz -= LWeightsCost;
-                LWeightsCost = (int)(LWeightsCost * 1.3f);
+                LWeightsCost = (int)(LWeightsCost * 1.2f);
                 LWeightsCostText.text = "Cost: " + LWeightsCost + " Gainz";
                 break;
             case 3:
@@ -66,7 +74,7 @@ public class ShopMaster : MonoBehaviour
                 gameMasterScript.danScript.RWeight.transform.localScale = new Vector2(gameMasterScript.danScript.RWeight.transform.localScale.x - weightSizeDecrease, gameMasterScript.danScript.RWeight.transform.localScale.y);
 
                 GameMaster.gainz -= RSizeCost;
-                RSizeCost = (int)(RSizeCost * 1.5f);
+                RSizeCost = (int)(RSizeCost * 1.2f);
                 RSizeCostText.text = "Cost: " + RSizeCost + " Gainz";
                 break;
             case 4:
@@ -78,7 +86,7 @@ public class ShopMaster : MonoBehaviour
                 gameMasterScript.danScript.LWeight.transform.localScale = new Vector2(gameMasterScript.danScript.LWeight.transform.localScale.x - weightSizeDecrease, gameMasterScript.danScript.LWeight.transform.localScale.y);
 
                 GameMaster.gainz -= LSizeCost;
-                LSizeCost = (int)(LSizeCost * 1.5f);
+                LSizeCost = (int)(LSizeCost * 1.2f);
                 LSizeCostText.text = "Cost: " + LSizeCost + " Gainz";
                 break;
 

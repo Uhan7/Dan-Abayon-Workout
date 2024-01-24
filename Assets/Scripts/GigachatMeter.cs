@@ -15,8 +15,8 @@ public class GigachatMeter : MonoBehaviour
 
     private void Update()
     {
-        fillVal = Mathf.Round((((float)(GameMaster.gainz) / 1000000000f) * 10.0f) * 0.1f);
-        percentText.text = fillVal.ToString() + "%";
+        fillVal = (float)(GameMaster.gainz)/1000000000f;
+        percentText.text = (Mathf.Round(fillVal * 1000.0f) * 0.1f).ToString() + "%";
 
         fillBarImage.fillAmount = fillVal;
     }
