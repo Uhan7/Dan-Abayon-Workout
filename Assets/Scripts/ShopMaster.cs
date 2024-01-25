@@ -39,6 +39,11 @@ public class ShopMaster : MonoBehaviour
         LSizeCostText.text = "Cost: " + LSizeCost + " Gainz";
     }
 
+    public void Update()
+    {
+        //gameMasterScript.danScript.RWeight.transform.localScale = new Vector2(gameMasterScript.danScript.RWeight.transform.localScale.x + weightSizeIncrease, gameMasterScript.danScript.RWeight.transform.localScale.y + weightSizeIncrease);
+    }
+
     public void Purchase(int type)
     {
         switch (type)
@@ -48,7 +53,6 @@ public class ShopMaster : MonoBehaviour
                 if (GameMaster.gainz < RWeightsCost) return;
 
                 gameMasterScript.danScript.RWeights += 5;
-                gameMasterScript.danScript.RWeight.transform.localScale = new Vector2(gameMasterScript.danScript.RWeight.transform.localScale.x + weightSizeIncrease, gameMasterScript.danScript.RWeight.transform.localScale.y + weightSizeIncrease);
 
                 GameMaster.gainz -= RWeightsCost;
                 RWeightsCost = (int) (RWeightsCost * 1.2f);
