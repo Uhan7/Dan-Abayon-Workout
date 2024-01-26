@@ -23,14 +23,29 @@ public class Dan : MonoBehaviour
     public float RBicepSize;
     public float LBicepSize;
 
+    public float WeightsIncrease;
+    public float BicepsIncrease;
+    public float WeightsDecrease;
+
     private void Awake()
     {
         RAnim = RArm.GetComponent<Animator>();
         LAnim = LArm.GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+
+    }
+
     void Update()
     {
+
+        RWeight.transform.localScale = new Vector2(5 + RWeights * WeightsIncrease - (RBicepSize - 31) * WeightsDecrease, 5 + RWeights * WeightsIncrease - (RBicepSize - 31) * WeightsDecrease);
+        LWeight.transform.localScale = new Vector2(5 + LWeights * WeightsIncrease, 5 + LWeights * WeightsIncrease);
+
+        RBicep.transform.localScale = new Vector2(1 + (RBicepSize - 31) * BicepsIncrease, 1);
+        LBicep.transform.localScale = new Vector2(1 + (LBicepSize - 31) * BicepsIncrease, 1);
 
         if (MouseDetector.mouseDetected) return;
 
