@@ -25,7 +25,6 @@ public class Dan : MonoBehaviour
 
     public float WeightsIncrease;
     public float BicepsIncrease;
-    public float WeightsDecrease;
 
     private void Awake()
     {
@@ -41,8 +40,8 @@ public class Dan : MonoBehaviour
     void Update()
     {
 
-        RWeight.transform.localScale = new Vector2(5 + RWeights * WeightsIncrease - (RBicepSize - 31) * WeightsDecrease, 5 + RWeights * WeightsIncrease - (RBicepSize - 31) * WeightsDecrease);
-        LWeight.transform.localScale = new Vector2(5 + LWeights * WeightsIncrease, 5 + LWeights * WeightsIncrease);
+        RWeight.transform.localScale = new Vector2((2 + RWeights * WeightsIncrease) * 1/RBicep.transform.localScale.x, 5 + RWeights * WeightsIncrease);
+        LWeight.transform.localScale = new Vector2((2 + LWeights * WeightsIncrease) * 1 / LBicep.transform.localScale.x, 5 + LWeights * WeightsIncrease);
 
         RBicep.transform.localScale = new Vector2(1 + (RBicepSize - 31) * BicepsIncrease, 1);
         LBicep.transform.localScale = new Vector2(1 + (LBicepSize - 31) * BicepsIncrease, 1);
