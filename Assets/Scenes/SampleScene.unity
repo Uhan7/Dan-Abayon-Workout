@@ -1623,7 +1623,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 384935596}
         m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
-        m_MethodName: Activate
+        m_MethodName: Unlock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2578,6 +2578,10 @@ MonoBehaviour:
   - {fileID: 1218013200}
   - {fileID: 162418247}
   - {fileID: 2131938731}
+  equips:
+  - {fileID: 1020555639}
+  - {fileID: 1131295610}
+  - {fileID: 390593555}
 --- !u!1 &390593555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,7 +2599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &390593556
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3436,7 +3440,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 384935596}
         m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
-        m_MethodName: Activate
+        m_MethodName: Unlock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4918,7 +4922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1020555640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5352,7 +5356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1131295611
 Transform:
   m_ObjectHideFlags: 0
@@ -5503,7 +5507,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 384935596}
         m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
-        m_MethodName: Activate
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 384935596}
+        m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
+        m_MethodName: Equip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6799,7 +6815,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 384935596}
         m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
-        m_MethodName: Activate
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 384935596}
+        m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
+        m_MethodName: Equip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8099,7 +8127,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 384935596}
         m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
-        m_MethodName: Activate
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 384935596}
+        m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
+        m_MethodName: Equip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8418,7 +8458,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 384935596}
         m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
-        m_MethodName: Activate
+        m_MethodName: Unlock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -6,7 +6,10 @@ public class UnlockablesMaster : MonoBehaviour
 {
 
     public GameObject[] items;
+    public GameObject[] equips;
+
     private int currentObj;
+    private int currentEquip;
 
     void Start()
     {
@@ -19,10 +22,34 @@ public class UnlockablesMaster : MonoBehaviour
         
     }
 
-    public void Activate()
+    public void Unlock()
     {
         items[currentObj].SetActive(false);
         currentObj++;
         items[currentObj].SetActive(true);
     }
+
+    public void Equip()
+    {
+        switch (currentObj)
+        {
+            case 3:
+                equips[currentEquip].SetActive(true);
+                currentEquip++;
+                break;
+
+            case 5:
+                equips[currentEquip].SetActive(true);
+                currentEquip++;
+                break;
+
+            case 6:
+                equips[currentEquip].SetActive(true);
+                break;
+
+            default:
+                break;
+        }
+    }
+
 }
