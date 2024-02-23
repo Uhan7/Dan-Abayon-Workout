@@ -2488,6 +2488,7 @@ GameObject:
   - component: {fileID: 384935595}
   - component: {fileID: 384935594}
   - component: {fileID: 384935596}
+  - component: {fileID: 384935597}
   m_Layer: 5
   m_Name: Item Unlockables
   m_TagString: Untagged
@@ -2571,6 +2572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d27af13162741f3a6bce7a76df17ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dan: {fileID: 465137666}
   items:
   - {fileID: 2062456708}
   - {fileID: 1171714869}
@@ -2582,6 +2584,18 @@ MonoBehaviour:
   - {fileID: 1020555639}
   - {fileID: 1131295610}
   - {fileID: 390593555}
+--- !u!114 &384935597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384935592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5fdbe20d7224d4b8853b51b2eeb606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &390593555
 GameObject:
   m_ObjectHideFlags: 0
@@ -8459,6 +8473,18 @@ MonoBehaviour:
       - m_Target: {fileID: 384935596}
         m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
         m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 384935596}
+        m_TargetAssemblyTypeName: UnlockablesMaster, Assembly-CSharp
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

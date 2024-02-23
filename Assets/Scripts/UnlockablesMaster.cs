@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class UnlockablesMaster : MonoBehaviour
 {
+    public GameObject dan;
+    private Dan danScript;
 
     public GameObject[] items;
     public GameObject[] equips;
 
     private int currentObj;
     private int currentEquip;
+
+    private void Awake()
+    {
+        danScript = dan.GetComponent<Dan>();
+    }
 
     void Start()
     {
@@ -27,6 +34,20 @@ public class UnlockablesMaster : MonoBehaviour
         items[currentObj].SetActive(false);
         currentObj++;
         items[currentObj].SetActive(true);
+    }
+
+    public void Activate()
+    {
+        switch (currentObj)
+        {
+            case 1:
+                danScript.RWeights += 30;
+                danScript.LWeights += 30;
+                break;
+
+            default:
+                break;
+        }
     }
 
     public void Equip()
