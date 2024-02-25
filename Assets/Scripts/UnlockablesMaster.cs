@@ -45,6 +45,30 @@ public class UnlockablesMaster : MonoBehaviour
                 danScript.LWeights += 30;
                 break;
 
+            case 2:
+                danScript.RBicepSize += 6;
+                break;
+
+            //case 1:
+            //    danScript.RWeights += 30;
+            //    danScript.LWeights += 30;
+            //    break;
+
+            //case 1:
+            //    danScript.RWeights += 30;
+            //    danScript.LWeights += 30;
+            //    break;
+
+            //case 1:
+            //    danScript.RWeights += 30;
+            //    danScript.LWeights += 30;
+            //    break;
+
+            //case 1:
+            //    danScript.RWeights += 30;
+            //    danScript.LWeights += 30;
+            //    break;
+
             default:
                 break;
         }

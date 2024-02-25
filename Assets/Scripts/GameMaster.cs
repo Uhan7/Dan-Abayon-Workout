@@ -10,6 +10,8 @@ public class GameMaster : MonoBehaviour
     private int RGain;
     private int LGain;
 
+    public int gainzMultiplier = 1;
+
     public static int gainz = 0;
 
     public TextMeshProUGUI gainzText;
@@ -24,8 +26,6 @@ public class GameMaster : MonoBehaviour
     public void Awake()
     {
         danScript = dan.GetComponent<Dan>();
-
-
     }
 
     public void Start()
@@ -47,15 +47,15 @@ public class GameMaster : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1) ||
             Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.RightArrow))
         {
-            gainz += (LGain + RGain) * 10;
+            gainz += (LGain + RGain) * 10 * gainzMultiplier;
         }
         else if (Input.GetMouseButtonDown(0) && !useArrowKeys || Input.GetKeyDown(KeyCode.LeftArrow) && useArrowKeys)
         {
-            gainz += RGain;
+            gainz += RGain * gainzMultiplier;
         }
         else if (Input.GetMouseButtonDown(1) && !useArrowKeys || Input.GetKeyDown(KeyCode.RightArrow) && useArrowKeys)
         {
-            gainz += LGain;
+            gainz += LGain * gainzMultiplier;
         }
     }
 
