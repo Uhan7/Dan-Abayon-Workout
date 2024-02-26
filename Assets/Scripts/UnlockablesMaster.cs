@@ -36,6 +36,9 @@ public class UnlockablesMaster : MonoBehaviour
     public void Unlock()
     {
         items[currentObj].SetActive(false);
+
+        if (currentObj >= items.Length-1) return;
+
         currentObj++;
         items[currentObj].SetActive(true);
     }
@@ -45,32 +48,32 @@ public class UnlockablesMaster : MonoBehaviour
         switch (currentObj)
         {
             case 1:
-                danScript.RWeights += 30;
-                danScript.LWeights += 30;
+                danScript.RWeights += 50;
+                danScript.LWeights += 50;
                 break;
 
             case 2:
-                danScript.RBicepSize += 6;
+                danScript.RBicepSize += 8;
                 break;
 
             case 3:
-                gameMasterScript.gainzMultiplier *= 2;
+                gameMasterScript.gainzMultiplier *= 4;
                 break;
 
-            //case 1:
-            //    danScript.RWeights += 30;
-            //    danScript.LWeights += 30;
-            //    break;
+            case 4:
+                danScript.RWeights += 40;
+                danScript.LWeights += 40;
+                danScript.RBicepSize += 4;
+                danScript.LBicepSize += 4;
+                break;
 
-            //case 1:
-            //    danScript.RWeights += 30;
-            //    danScript.LWeights += 30;
-            //    break;
+            case 5:
+                gameMasterScript.gainzMultiplier *= 3;
+                break;
 
-            //case 1:
-            //    danScript.RWeights += 30;
-            //    danScript.LWeights += 30;
-            //    break;
+            case 6:
+                gameMasterScript.gainzMultiplier *= 2;
+                break;
 
             default:
                 break;
