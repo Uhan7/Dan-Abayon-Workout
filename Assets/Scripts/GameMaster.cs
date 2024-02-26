@@ -15,6 +15,7 @@ public class GameMaster : MonoBehaviour
     public static int gainz = 0;
 
     public TextMeshProUGUI gainzText;
+    public TextMeshProUGUI multiplierText;
     public TextMeshProUGUI weightsText;
     public TextMeshProUGUI sizeText;
 
@@ -39,6 +40,7 @@ public class GameMaster : MonoBehaviour
         LGain = (int)(danScript.LWeights * (danScript.LBicepSize - 30));
 
         gainzText.text = "Gainz : " + gainz.ToString();
+        multiplierText.text = "Gainz Multiplier: " + gainzMultiplier.ToString() + "x";
         weightsText.text = "Weights : " + danScript.RWeights.ToString() + " lb | " + danScript.LWeights.ToString() + " lb";
         sizeText.text = "Bicep Size : " + danScript.RBicepSize.ToString() + " cm | " + danScript.LBicepSize.ToString() + " cm";
 

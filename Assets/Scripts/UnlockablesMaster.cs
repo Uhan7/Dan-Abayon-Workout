@@ -7,6 +7,9 @@ public class UnlockablesMaster : MonoBehaviour
     public GameObject dan;
     private Dan danScript;
 
+    public GameObject gameMaster;
+    private GameMaster gameMasterScript;
+
     public GameObject[] items;
     public GameObject[] equips;
 
@@ -16,6 +19,7 @@ public class UnlockablesMaster : MonoBehaviour
     private void Awake()
     {
         danScript = dan.GetComponent<Dan>();
+        gameMasterScript = gameMaster.GetComponent<GameMaster>();
     }
 
     void Start()
@@ -49,10 +53,9 @@ public class UnlockablesMaster : MonoBehaviour
                 danScript.RBicepSize += 6;
                 break;
 
-            //case 1:
-            //    danScript.RWeights += 30;
-            //    danScript.LWeights += 30;
-            //    break;
+            case 3:
+                gameMasterScript.gainzMultiplier *= 2;
+                break;
 
             //case 1:
             //    danScript.RWeights += 30;
