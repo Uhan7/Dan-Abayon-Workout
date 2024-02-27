@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GigachatMeter : MonoBehaviour
+public class GigachadMeter : MonoBehaviour
 {
 
     public TextMeshProUGUI percentText;

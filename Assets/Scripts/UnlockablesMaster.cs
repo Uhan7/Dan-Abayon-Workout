@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnlockablesMaster : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class UnlockablesMaster : MonoBehaviour
     public GameObject gameMaster;
     private GameMaster gameMasterScript;
 
+    public int[] itemGainzRequirements;
     public GameObject[] items;
+    public Button[] itemButtons;
     public GameObject[] equips;
 
     private int currentObj;
@@ -25,12 +28,28 @@ public class UnlockablesMaster : MonoBehaviour
     void Start()
     {
         currentObj = 0;
+        foreach (Button button in itemButtons)
+        {
+            button.interactable = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (GameMaster.gainz >= itemGainzRequirements[i]) itemButtons[i].interactable = true;
+        }
+
+        /*
+         * if (GameMaster.gainz >= itemGainzRequirements[0]) itemButtons[0].interactable = true;
+         * if (GameMaster.gainz >= itemGainzRequirements[1]) itemButtons[1].interactable = true;
+         * if (GameMaster.gainz >= itemGainzRequirements[2]) itemButtons[2].interactable = true;
+         * if (GameMaster.gainz >= itemGainzRequirements[3]) itemButtons[3].interactable = true;
+         * if (GameMaster.gainz >= itemGainzRequirements[4]) itemButtons[4].interactable = true;
+         * if (GameMaster.gainz >= itemGainzRequirements[5]) itemButtons[5].interactable = true;
+        */
     }
 
     public void Unlock()

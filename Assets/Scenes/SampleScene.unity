@@ -2586,6 +2586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dan: {fileID: 465137666}
   gameMaster: {fileID: 2093450839}
+  itemGainzRequirements: 10270000a086010020a1070080841e00404b4c0080969800
   items:
   - {fileID: 2062456708}
   - {fileID: 1171714869}
@@ -2593,6 +2594,13 @@ MonoBehaviour:
   - {fileID: 1218013200}
   - {fileID: 162418247}
   - {fileID: 2131938731}
+  itemButtons:
+  - {fileID: 1977991345}
+  - {fileID: 663537713}
+  - {fileID: 1181824098}
+  - {fileID: 298873538}
+  - {fileID: 1566006234}
+  - {fileID: 1940837336}
   equips:
   - {fileID: 1020555639}
   - {fileID: 1131295610}
@@ -4570,6 +4578,7 @@ GameObject:
   - component: {fileID: 963989626}
   - component: {fileID: 963989625}
   - component: {fileID: 963989624}
+  - component: {fileID: 963989627}
   m_Layer: 5
   m_Name: Turn into GIGACHAD Button
   m_TagString: Untagged
@@ -4682,6 +4691,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963989622}
   m_CullTransparentMesh: 1
+--- !u!114 &963989627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963989622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c84ed5fa147a48f08ae24f31e02747f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1001847891
 GameObject:
   m_ObjectHideFlags: 0
