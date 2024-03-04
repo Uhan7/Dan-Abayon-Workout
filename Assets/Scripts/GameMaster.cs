@@ -12,7 +12,7 @@ public class GameMaster : MonoBehaviour
 
     public int gainzMultiplier = 1;
 
-    public static int gainz = 0;
+    public static long gainz = 0;
 
     public TextMeshProUGUI gainzText;
     public TextMeshProUGUI multiplierText;

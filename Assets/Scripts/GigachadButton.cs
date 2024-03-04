@@ -21,6 +21,6 @@ public class GigachadButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameMaster.gainz >= 1000000000) selfButton.interactable = true;
+        if (GameMaster.gainz >= 10000000000f) selfButton.interactable = true;
     }
 }
