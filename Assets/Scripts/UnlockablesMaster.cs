@@ -19,6 +19,8 @@ public class UnlockablesMaster : MonoBehaviour
     private int currentObj;
     private int currentEquip;
 
+    public GameObject squareHighlight;
+
     private void Awake()
     {
         danScript = dan.GetComponent<Dan>();
@@ -28,10 +30,13 @@ public class UnlockablesMaster : MonoBehaviour
     void Start()
     {
         currentObj = 0;
+
         foreach (Button button in itemButtons)
         {
             button.interactable = false;
         }
+
+        squareHighlight.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,8 +44,14 @@ public class UnlockablesMaster : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-            if (GameMaster.gainz >= itemGainzRequirements[i]) itemButtons[i].interactable = true;
+            if (GameMaster.gainz >= itemGainzRequirements[i])
+            {
+                itemButtons[i].interactable = true;
+            }
         }
+
+        if (itemButtons[currentObj].interactable && items[currentObj].activeInHierarchy) squareHighlight.SetActive(true);
+        else squareHighlight.SetActive(false);
 
         /*
          * if (GameMaster.gainz >= itemGainzRequirements[0]) itemButtons[0].interactable = true;
