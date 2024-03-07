@@ -10,17 +10,15 @@ public class ShopMaster : MonoBehaviour
     public GameObject gameMaster;
     private GameMaster gameMasterScript;
 
-    public int RWeightsCost;
-    public int LWeightsCost;
-
-    public int RSizeCost;
-    public int LSizeCost;
+    public int[] shopItemCost;
 
     public TextMeshProUGUI RWeightsCostText;
     public TextMeshProUGUI LWeightsCostText;
 
     public TextMeshProUGUI RSizeCostText;
     public TextMeshProUGUI LSizeCostText;
+
+    public Button[] shopButtons;
 
     private void Awake()
     {
@@ -29,15 +27,19 @@ public class ShopMaster : MonoBehaviour
 
     private void Start()
     {
-        RWeightsCostText.text = "Cost: " + RWeightsCost + " Gainz";
-        LWeightsCostText.text = "Cost: " + LWeightsCost + " Gainz";
-        RSizeCostText.text = "Cost: " + RSizeCost + " Gainz";
-        LSizeCostText.text = "Cost: " + LSizeCost + " Gainz";
+        RWeightsCostText.text = "Cost: " + shopItemCost[0] + " Gainz";
+        LWeightsCostText.text = "Cost: " + shopItemCost[1] + " Gainz";
+        RSizeCostText.text = "Cost: " + shopItemCost[2] + " Gainz";
+        LSizeCostText.text = "Cost: " + shopItemCost[3] + " Gainz";
     }
 
     public void Update()
     {
-        //gameMasterScript.danScript.RWeight.transform.localScale = new Vector2(gameMasterScript.danScript.RWeight.transform.localScale.x + weightSizeIncrease, gameMasterScript.danScript.RWeight.transform.localScale.y + weightSizeIncrease);
+        for (int i = 0; i < shopButtons.Length; i++)
+        {
+            if (GameMaster.gainz < shopItemCost[i]) shopButtons[i].interactable = false;
+            else shopButtons[i].interactable = true;
+        }
     }
 
     public void Purchase(int type)
@@ -46,43 +48,43 @@ public class ShopMaster : MonoBehaviour
         {
             case 1:
 
-                if (GameMaster.gainz < RWeightsCost) return;
+                if (GameMaster.gainz < shopItemCost[0]) return;
 
                 gameMasterScript.danScript.RWeights += 5;
 
-                GameMaster.gainz -= RWeightsCost;
-                RWeightsCost = (int) (RWeightsCost * 1.2f);
-                RWeightsCostText.text = "Cost: " + RWeightsCost + " Gainz";
+                GameMaster.gainz -= shopItemCost[0];
+                shopItemCost[0] = (int) (shopItemCost[0] * 1.2f);
+                RWeightsCostText.text = "Cost: " + shopItemCost[0] + " Gainz";
                 break;
             case 2:
 
-                if (GameMaster.gainz < LWeightsCost) return;
+                if (GameMaster.gainz < shopItemCost[1]) return;
 
                 gameMasterScript.danScript.LWeights += 5;
 
-                GameMaster.gainz -= LWeightsCost;
-                LWeightsCost = (int)(LWeightsCost * 1.2f);
-                LWeightsCostText.text = "Cost: " + LWeightsCost + " Gainz";
+                GameMaster.gainz -= shopItemCost[1];
+                shopItemCost[1] = (int)(shopItemCost[1] * 1.2f);
+                LWeightsCostText.text = "Cost: " + shopItemCost[1] + " Gainz";
                 break;
             case 3:
 
-                if (GameMaster.gainz < RSizeCost) return;
+                if (GameMaster.gainz < shopItemCost[2]) return;
 
                 gameMasterScript.danScript.RBicepSize += 0.5f;
 
-                GameMaster.gainz -= RSizeCost;
-                RSizeCost = (int)(RSizeCost * 1.2f);
-                RSizeCostText.text = "Cost: " + RSizeCost + " Gainz";
+                GameMaster.gainz -= shopItemCost[2];
+                shopItemCost[2] = (int)(shopItemCost[2] * 1.2f);
+                RSizeCostText.text = "Cost: " + shopItemCost[2] + " Gainz";
                 break;
             case 4:
 
-                if (GameMaster.gainz < LSizeCost) return;
+                if (GameMaster.gainz < shopItemCost[3]) return;
 
                 gameMasterScript.danScript.LBicepSize += 0.5f;
 
-                GameMaster.gainz -= LSizeCost;
-                LSizeCost = (int)(LSizeCost * 1.2f);
-                LSizeCostText.text = "Cost: " + LSizeCost + " Gainz";
+                GameMaster.gainz -= shopItemCost[3];
+                shopItemCost[3] = (int)(shopItemCost[3] * 1.2f);
+                LSizeCostText.text = "Cost: " + shopItemCost[3] + " Gainz";
                 break;
 
             default:
