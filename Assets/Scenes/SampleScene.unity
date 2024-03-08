@@ -6587,6 +6587,7 @@ GameObject:
   - component: {fileID: 1413569598}
   - component: {fileID: 1413569600}
   - component: {fileID: 1413569599}
+  - component: {fileID: 1413569601}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -6653,6 +6654,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413569597}
   m_CullTransparentMesh: 1
+--- !u!114 &1413569601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413569597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5fdbe20d7224d4b8853b51b2eeb606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1457116434
 GameObject:
   m_ObjectHideFlags: 0
@@ -10653,6 +10666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gainzMultiplier: 1
+  doubleRepTime: 0.024
   gainzText: {fileID: 129775250}
   multiplierText: {fileID: 1545100161}
   weightsText: {fileID: 1198483335}

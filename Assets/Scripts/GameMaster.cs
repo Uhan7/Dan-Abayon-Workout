@@ -14,6 +14,11 @@ public class GameMaster : MonoBehaviour
 
     public static long gainz = 0;
 
+    public float doubleRepTime;
+    private float doubleRepTimer;
+
+    private bool canDoubleRep;
+
     public TextMeshProUGUI gainzText;
     public TextMeshProUGUI multiplierText;
     public TextMeshProUGUI weightsText;
@@ -35,6 +40,7 @@ public class GameMaster : MonoBehaviour
     public void Start()
     {
         paused = false;
+        doubleRepTimer = 0;
     }
 
     public void Update()
@@ -49,21 +55,46 @@ public class GameMaster : MonoBehaviour
         weightsText.text = "Weights : " + danScript.RWeights.ToString() + " lb | " + danScript.LWeights.ToString() + " lb";
         sizeText.text = "Bicep Size : " + danScript.RBicepSize.ToString() + " cm | " + danScript.LBicepSize.ToString() + " cm";
 
-        //Only clickable at certain areas
-        if (MouseDetector.mouseDetected) return;
+        //Double Rep Timer goes down continuously
+        doubleRepTimer -= Time.deltaTime;
+        Debug.Log(doubleRepTimer);
 
-        if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1) ||
-            Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.RightArrow))
+        //Gainz part
+        if (!useArrowKeys)
         {
-            gainz += (LGain + RGain) * 10 * gainzMultiplier;
+            if (MouseDetector.mouseDetected) return;
+
+            if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1)) gainz += (LGain + RGain) * 10 * gainzMultiplier;
+            else if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            {
+                if (canDoubleRep)
+                {
+                    gainz += (LGain + RGain) * 10 * gainzMultiplier;
+                    gainz -= (Input.GetMouseButtonDown(0)) ? LGain * gainzMultiplier : RGain * gainzMultiplier;
+                }
+                else
+                {
+                    doubleRepTimer = doubleRepTime;
+                    gainz += Input.GetMouseButtonDown(0) ? RGain * gainzMultiplier : LGain * gainzMultiplier;
+                }
+            }
         }
-        else if (Input.GetMouseButtonDown(0) && !useArrowKeys || Input.GetKeyDown(KeyCode.LeftArrow) && useArrowKeys)
+        else
         {
-            gainz += RGain * gainzMultiplier;
-        }
-        else if (Input.GetMouseButtonDown(1) && !useArrowKeys || Input.GetKeyDown(KeyCode.RightArrow) && useArrowKeys)
-        {
-            gainz += LGain * gainzMultiplier;
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.RightArrow)) gainz += (LGain + RGain) * 10 * gainzMultiplier;
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                if (canDoubleRep)
+                {
+                    gainz += (LGain + RGain) * 10 * gainzMultiplier;
+                    gainz -= (Input.GetKeyDown(KeyCode.LeftArrow)) ? LGain * gainzMultiplier : RGain * gainzMultiplier;
+                }
+                else
+                {
+                    doubleRepTimer = doubleRepTime;
+                    gainz += Input.GetKeyDown(KeyCode.LeftArrow) ? RGain * gainzMultiplier : LGain * gainzMultiplier;
+                }
+            }
         }
 
         //Pause Stuff
@@ -71,6 +102,12 @@ public class GameMaster : MonoBehaviour
         {
             PauseGame();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (doubleRepTimer > 0) canDoubleRep = true;
+        else canDoubleRep = false;
     }
 
     public void UseArrowKeysButton()

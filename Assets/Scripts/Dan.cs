@@ -46,23 +46,21 @@ public class Dan : MonoBehaviour
         RBicep.transform.localScale = new Vector2(1 + (RBicepSize - 31) * BicepsIncrease, 1);
         LBicep.transform.localScale = new Vector2(1 + (LBicepSize - 31) * BicepsIncrease, 1);
 
-        if (MouseDetector.mouseDetected) return;
+        if (!GameMaster.useArrowKeys)
+        {
+            if (MouseDetector.mouseDetected) return;
 
-        if (Input.GetMouseButton(0) && !GameMaster.useArrowKeys || Input.GetKey(KeyCode.LeftArrow) && GameMaster.useArrowKeys)
-        {
-            StartCoroutine(RightGainz(true));
+            if (Input.GetMouseButtonDown(0)) StartCoroutine(RightGainz(true));
+            else if (Input.GetMouseButtonUp(0)) StartCoroutine(RightGainz(false));
+            if (Input.GetMouseButtonDown(1)) StartCoroutine(LeftGainz(true));
+            else if (Input.GetMouseButtonUp(1)) StartCoroutine(LeftGainz(false));
         }
         else
         {
-            StartCoroutine(RightGainz(false));
-        }
-        if (Input.GetMouseButton(1) && !GameMaster.useArrowKeys || Input.GetKey(KeyCode.RightArrow) && GameMaster.useArrowKeys)
-        {
-            StartCoroutine(LeftGainz(true));
-        }
-        else
-        {
-            StartCoroutine(LeftGainz(false));
+            if (Input.GetKeyDown(KeyCode.LeftArrow)) StartCoroutine(RightGainz(true));
+            else if (Input.GetKeyUp(KeyCode.LeftArrow)) StartCoroutine(RightGainz(false));
+            if (Input.GetKeyDown(KeyCode.RightArrow)) StartCoroutine(LeftGainz(true));
+            else if (Input.GetKeyUp(KeyCode.RightArrow)) StartCoroutine(LeftGainz(false));
         }
 
     }
