@@ -10,9 +10,9 @@ public class GameMaster : MonoBehaviour
     private int RGain;
     private int LGain;
 
-    public int gainzMultiplier = 1;
+    public int gainzMultiplier;
 
-    public static long gainz = 0;
+    public static long gainz;
 
     public float doubleRepTime;
     private float doubleRepTimer;
@@ -39,6 +39,9 @@ public class GameMaster : MonoBehaviour
 
     public void Start()
     {
+        gainzMultiplier = 1;
+        gainz = 0;
+
         paused = false;
         doubleRepTimer = 0;
     }
@@ -132,4 +135,22 @@ public class GameMaster : MonoBehaviour
         }
     }
 
+    public IEnumerator WinGame()
+    {
+        // Play gigachad musci then wait
+        // Activate gigacahd face then wait
+        // Activate win screen !!!!!!
+            // win screen has
+                 // reset prompt
+                 // time taken to be gigachad
+        yield return null;
+    }
+
+    public IEnumerator ResetGame()
+    {
+        // have slidey box or someshit to center then wait
+        // reset values
+        // slidey box will fade out
+        yield return null;
+    }
 }
