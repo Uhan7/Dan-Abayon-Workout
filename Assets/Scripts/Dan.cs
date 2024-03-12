@@ -69,14 +69,14 @@ public class Dan : MonoBehaviour
     {
         RAnim.SetBool("R_Gainz", state);
         yield return new WaitForSeconds(0.1f);
-        //stuff
+        // <play sfx> ;
     }
 
     IEnumerator LeftGainz(bool state)
     {
         LAnim.SetBool("L_Gainz", state);
         yield return new WaitForSeconds(0.1f);
-        //stuff
+        // <play sfx> ;
     }
 
 }

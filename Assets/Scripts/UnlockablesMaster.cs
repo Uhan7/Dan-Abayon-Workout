@@ -39,7 +39,6 @@ public class UnlockablesMaster : MonoBehaviour
         squareHighlight.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         for (int i = 0; i < items.Length; i++)
@@ -52,15 +51,6 @@ public class UnlockablesMaster : MonoBehaviour
 
         if (itemButtons[currentObj].interactable && items[currentObj].activeInHierarchy) squareHighlight.SetActive(true);
         else squareHighlight.SetActive(false);
-
-        /*
-         * if (GameMaster.gainz >= itemGainzRequirements[0]) itemButtons[0].interactable = true;
-         * if (GameMaster.gainz >= itemGainzRequirements[1]) itemButtons[1].interactable = true;
-         * if (GameMaster.gainz >= itemGainzRequirements[2]) itemButtons[2].interactable = true;
-         * if (GameMaster.gainz >= itemGainzRequirements[3]) itemButtons[3].interactable = true;
-         * if (GameMaster.gainz >= itemGainzRequirements[4]) itemButtons[4].interactable = true;
-         * if (GameMaster.gainz >= itemGainzRequirements[5]) itemButtons[5].interactable = true;
-        */
     }
 
     public void Unlock()

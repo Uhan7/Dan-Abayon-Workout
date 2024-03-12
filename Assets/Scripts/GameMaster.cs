@@ -67,13 +67,20 @@ public class GameMaster : MonoBehaviour
         {
             if (MouseDetector.mouseDetected) return;
 
-            if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1)) gainz += (LGain + RGain) * 10 * gainzMultiplier;
+            if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1))
+            {
+                gainz += (LGain + RGain) * 10 * gainzMultiplier;
+                // play epic perfect rep sfx
+                // instantiate perfect rep effect
+            }
             else if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 if (canDoubleRep)
                 {
                     gainz += (LGain + RGain) * 10 * gainzMultiplier;
                     gainz -= (Input.GetMouseButtonDown(0)) ? LGain * gainzMultiplier : RGain * gainzMultiplier;
+                    // play epic perfect rep sfx
+                    // instantiate perfect rep effect
                 }
                 else
                 {
@@ -84,13 +91,20 @@ public class GameMaster : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.RightArrow)) gainz += (LGain + RGain) * 10 * gainzMultiplier;
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                gainz += (LGain + RGain) * 10 * gainzMultiplier;
+                // play epic perfect rep sfx
+                // instantiate perfect rep effect
+            }
             else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 if (canDoubleRep)
                 {
                     gainz += (LGain + RGain) * 10 * gainzMultiplier;
                     gainz -= (Input.GetKeyDown(KeyCode.LeftArrow)) ? LGain * gainzMultiplier : RGain * gainzMultiplier;
+                    // play epic perfect rep sfx
+                    // instantiate perfect rep effect
                 }
                 else
                 {
