@@ -3147,6 +3147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef71f3b0c72034f4aa5be282a830fed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxSource: {fileID: 2008554474}
+  breatheInSFX: {fileID: 8300000, guid: 21b00e560100f44c4952586d24b9c935, type: 3}
+  breatheOutSFX: {fileID: 8300000, guid: b656d31c071464065bce651490abdf8f, type: 3}
   RArm: {fileID: 2032419852}
   LArm: {fileID: 721695375}
   RBicep: {fileID: 2096303792}
@@ -10665,8 +10668,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4a862b86d6b470aa65bad592bca0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxSource: {fileID: 2008554474}
+  vineBoomSFX: {fileID: 8300000, guid: 964d0aa6b2cc84de6a88ae319cc3fae6, type: 3}
+  breatheInSFX: {fileID: 0}
+  breatheOutSFX: {fileID: 0}
   gainzMultiplier: 1
-  doubleRepTime: 0.024
+  doubleRepTime: 0.015
   gainzText: {fileID: 129775250}
   multiplierText: {fileID: 1545100161}
   weightsText: {fileID: 1198483335}

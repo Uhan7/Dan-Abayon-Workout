@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Dan : MonoBehaviour
 {
+    public AudioSource sfxSource;
+
+    public AudioClip breatheInSFX;
+    public AudioClip breatheOutSFX;
 
     private Animator RAnim;
     private Animator LAnim;
@@ -68,6 +72,8 @@ public class Dan : MonoBehaviour
     IEnumerator RightGainz(bool state)
     {
         RAnim.SetBool("R_Gainz", state);
+        if (state) sfxSource.PlayOneShot(breatheInSFX);
+        else sfxSource.PlayOneShot(breatheOutSFX);
         yield return new WaitForSeconds(0.1f);
         // <play sfx> ;
     }
@@ -75,6 +81,8 @@ public class Dan : MonoBehaviour
     IEnumerator LeftGainz(bool state)
     {
         LAnim.SetBool("L_Gainz", state);
+        if (state) sfxSource.PlayOneShot(breatheInSFX);
+        else sfxSource.PlayOneShot(breatheOutSFX);
         yield return new WaitForSeconds(0.1f);
         // <play sfx> ;
     }
