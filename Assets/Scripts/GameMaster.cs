@@ -169,7 +169,7 @@ public class GameMaster : MonoBehaviour
     {
     // Play gigachad musci then wait
         bgmSource.Stop();
-        bgmSource.PlayOneShot(gigachadMusic);
+        // bgmSource.PlayOneShot(gigachadMusic);
         yield return new WaitForSeconds(3);
     // Activate gigacahd face then wait + disable possible reps
         gigachadFace.SetActive(true);
@@ -189,5 +189,10 @@ public class GameMaster : MonoBehaviour
         // reset values
         // slidey box will fade out
         yield return null;
+    }
+
+    public void Wrapper(string coroutineName)
+    {
+        StartCoroutine(coroutineName);
     }
 }
