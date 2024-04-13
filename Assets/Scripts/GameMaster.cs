@@ -8,10 +8,13 @@ using TMPro;
 public class GameMaster : MonoBehaviour
 {
     public AudioSource sfxSource;
+    public AudioSource bgmSource;
 
     public AudioClip vineBoomSFX; // PROBABLY WILL CHANGE TO A BOOM OBJECT
     public AudioClip breatheInSFX;
     public AudioClip breatheOutSFX;
+
+    public AudioClip gigachadMusic;
 
     private int RGain;
     private int LGain;
@@ -33,8 +36,13 @@ public class GameMaster : MonoBehaviour
     public GameObject dan;
     public Dan danScript;
 
+    public GameObject gigachadFace;
+
     public bool paused;
     public GameObject pauseMenu;
+
+    public static bool gameEnd;
+    public GameObject winScreen;
 
     public static bool useArrowKeys;
 
@@ -45,6 +53,8 @@ public class GameMaster : MonoBehaviour
 
     public void Start()
     {
+        gameEnd = false;
+
         gainzMultiplier = 1;
         gainz = 0;
 
@@ -143,13 +153,13 @@ public class GameMaster : MonoBehaviour
     {
         if (!paused)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             pauseMenu.SetActive(true);
             paused = true;
         }
         else
         {
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
             pauseMenu.SetActive(false);
             paused = false;
         }
@@ -157,12 +167,19 @@ public class GameMaster : MonoBehaviour
 
     public IEnumerator WinGame()
     {
-        // Play gigachad musci then wait
-        // Activate gigacahd face then wait
-        // Activate win screen !!!!!!
-            // win screen has
-                 // reset prompt
-                 // time taken to be gigachad
+    // Play gigachad musci then wait
+        bgmSource.Stop();
+        bgmSource.PlayOneShot(gigachadMusic);
+        yield return new WaitForSeconds(3);
+    // Activate gigacahd face then wait + disable possible reps
+        gigachadFace.SetActive(true);
+        yield return new WaitForSeconds(3);
+        // disable possible reps
+    // Activate win screen !!!!!!
+        winScreen.SetActive(true);
+        // win screen has
+            // reset prompt
+            // time taken to be gigachad
         yield return null;
     }
 

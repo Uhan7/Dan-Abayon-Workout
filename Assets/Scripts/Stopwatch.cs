@@ -19,7 +19,7 @@ public class Stopwatch : MonoBehaviour
     {
         stopwatchTimeText.text = "Time Elapsed Before ASCENSION : " + GetMinutes(stopwatchTime).ToString() + "m " +
             GetSeconds(stopwatchTime).ToString() + "s";
-        stopwatchTime += Time.deltaTime;
+        stopwatchTime += Time.unscaledDeltaTime;
     }
 
     int GetMinutes(float time)
