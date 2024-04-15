@@ -76,7 +76,6 @@ public class GameMaster : MonoBehaviour
 
         //Double Rep Timer goes down continuously
         doubleRepTimer -= Time.deltaTime;
-        Debug.Log(doubleRepTimer);
 
         //Gainz part
         if (!useArrowKeys)
@@ -128,12 +127,6 @@ public class GameMaster : MonoBehaviour
                     gainz += Input.GetKeyDown(KeyCode.LeftArrow) ? RGain * gainzMultiplier : LGain * gainzMultiplier;
                 }
             }
-        }
-
-        //Pause Stuff
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseGame();
         }
     }
 
