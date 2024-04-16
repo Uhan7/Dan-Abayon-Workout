@@ -38,9 +38,6 @@ public class GameMaster : MonoBehaviour
 
     public GameObject gigachadFace;
 
-    public bool paused;
-    public GameObject pauseMenu;
-
     public static bool gameEnd;
     public GameObject winScreen;
 
@@ -58,7 +55,6 @@ public class GameMaster : MonoBehaviour
         gainzMultiplier = 1;
         gainz = 0;
 
-        paused = false;
         doubleRepTimer = 0;
     }
 
@@ -140,22 +136,6 @@ public class GameMaster : MonoBehaviour
     {
         if (!useArrowKeys) useArrowKeys = true;
         else if (useArrowKeys) useArrowKeys = false;
-    }
-
-    public void PauseGame()
-    {
-        if (!paused)
-        {
-            //Time.timeScale = 0;
-            pauseMenu.SetActive(true);
-            paused = true;
-        }
-        else
-        {
-            //Time.timeScale = 1;
-            pauseMenu.SetActive(false);
-            paused = false;
-        }
     }
 
     public IEnumerator WinGame()
