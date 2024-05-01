@@ -7,6 +7,9 @@ using TMPro;
 
 public class GameMaster : MonoBehaviour
 {
+
+    public RectTransform canvasRect;
+
     public AudioSource sfxSource;
     public AudioSource bgmSource;
 
@@ -27,6 +30,8 @@ public class GameMaster : MonoBehaviour
     private float doubleRepTimer;
 
     private bool canDoubleRep;
+
+    public GameObject doubleRepEffect;
 
     public TextMeshProUGUI gainzText;
     public TextMeshProUGUI multiplierText;
@@ -80,18 +85,16 @@ public class GameMaster : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonDown(1))
             {
-                gainz += (LGain + RGain) * 10 * gainzMultiplier;
-                sfxSource.PlayOneShot(vineBoomSFX);
-                // instantiate perfect rep effect
+                gainz += (LGain + RGain) * 5 * gainzMultiplier;
+                DoubleRep();
             }
             else if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 if (canDoubleRep)
                 {
-                    gainz += (LGain + RGain) * 10 * gainzMultiplier;
+                    gainz += (LGain + RGain) * 5 * gainzMultiplier;
                     gainz -= (Input.GetMouseButtonDown(0)) ? LGain * gainzMultiplier : RGain * gainzMultiplier;
-                    sfxSource.PlayOneShot(vineBoomSFX);
-                    // instantiate perfect rep effect
+                    DoubleRep();
                 }
                 else
                 {
@@ -104,18 +107,16 @@ public class GameMaster : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.RightArrow))
             {
-                gainz += (LGain + RGain) * 10 * gainzMultiplier;
-                sfxSource.PlayOneShot(vineBoomSFX);
-                // instantiate perfect rep effect
+                gainz += (LGain + RGain) * 5 * gainzMultiplier;
+                DoubleRep();
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 if (canDoubleRep)
                 {
-                    gainz += (LGain + RGain) * 10 * gainzMultiplier;
+                    gainz += (LGain + RGain) * 5 * gainzMultiplier;
                     gainz -= (Input.GetKeyDown(KeyCode.LeftArrow)) ? LGain * gainzMultiplier : RGain * gainzMultiplier;
-                    sfxSource.PlayOneShot(vineBoomSFX);
-                    // instantiate perfect rep effect
+                    DoubleRep();
                 }
                 else
                 {
@@ -130,6 +131,17 @@ public class GameMaster : MonoBehaviour
     {
         if (doubleRepTimer > 0) canDoubleRep = true;
         else canDoubleRep = false;
+    }
+
+    private void DoubleRep()
+    {
+        float randomPosx = Random.Range(-600f, -400f);
+        float randomPosy = Random.Range(-300f, 250f);
+
+        Vector2 randomPos = new Vector2(randomPosx + 683, randomPosy + 384);
+
+        sfxSource.PlayOneShot(vineBoomSFX);
+        Instantiate(doubleRepEffect, randomPos, Quaternion.identity, canvasRect);
     }
 
     public void UseArrowKeysButton()

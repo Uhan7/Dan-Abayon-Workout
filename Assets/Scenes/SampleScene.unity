@@ -342,8 +342,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -30, y: 0}
+  m_SizeDelta: {x: 20, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &17826414
 MonoBehaviour:
@@ -8041,8 +8041,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -30, y: 0}
+  m_SizeDelta: {x: 20, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1122530946
 MonoBehaviour:
@@ -13468,6 +13468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4a862b86d6b470aa65bad592bca0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasRect: {fileID: 2062838356}
   sfxSource: {fileID: 2008554474}
   bgmSource: {fileID: 1809385348}
   vineBoomSFX: {fileID: 8300000, guid: 964d0aa6b2cc84de6a88ae319cc3fae6, type: 3}
@@ -13476,6 +13477,7 @@ MonoBehaviour:
   gigachadMusic: {fileID: 8300000, guid: 606d1e67b3c344300be446fc1b9d80ae, type: 3}
   gainzMultiplier: 1
   doubleRepTime: 0.015
+  doubleRepEffect: {fileID: 8058768807583406308, guid: 75817c43cf7ed414988a5a56ca72c990, type: 3}
   gainzText: {fileID: 129775250}
   multiplierText: {fileID: 1545100161}
   weightsText: {fileID: 1198483335}
