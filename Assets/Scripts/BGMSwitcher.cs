@@ -10,6 +10,11 @@ public class BGMSwitcher : MonoBehaviour
 
     private AudioClip musicToPlay;
 
+    private void Awake()
+    {
+        aSource = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
 
@@ -17,6 +22,10 @@ public class BGMSwitcher : MonoBehaviour
 
     void Update()
     {
-       // if (!aSource.isPlaying)
+       if (!aSource.isPlaying)
+        {
+            musicToPlay = bgms[Random.Range(0, bgms.Length-1)];
+            aSource.PlayOneShot(musicToPlay);
+        }
     }
 }
