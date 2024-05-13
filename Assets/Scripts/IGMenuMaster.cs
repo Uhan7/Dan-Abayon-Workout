@@ -20,6 +20,9 @@ public class IGMenuMaster : MonoBehaviour
     public GameObject mouseIcon;
     public GameObject arrowsIcon;
 
+    // Other
+    public GameObject guideWindow;
+
     private void Start()
     {
         shopActive = false;
@@ -31,14 +34,13 @@ public class IGMenuMaster : MonoBehaviour
         // Inputs
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (guideWindow.activeInHierarchy) guideWindow.SetActive(false);
+
             shopActive = !shopActive;
             optActive = !optActive;
 
             shopUI.SetBool("Active", shopActive);
             optUI.SetBool("Active", optActive);
-
-            print(shopActive);
-            print(optActive);
         }
 
         // Non-Inputs
@@ -56,5 +58,10 @@ public class IGMenuMaster : MonoBehaviour
             toggleButtonText.text = "Use Mouse Buttons";
         }
 
+    }
+
+    public void OpenGuide()
+    {
+        guideWindow.SetActive(true);
     }
 }

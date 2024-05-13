@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1445987896145798832}
   - component: {fileID: 5232575457006300332}
   - component: {fileID: 3940666567085913492}
+  - component: {fileID: 49638460913473891}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -112,3 +113,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killSelfTime: 1
+--- !u!225 &49638460913473891
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8058768807583406308}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

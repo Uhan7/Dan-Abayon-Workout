@@ -10,17 +10,17 @@ public class MouseDetector : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     void Start()
     {
-        mouseDetected = false;
+        mouseDetected = true;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        mouseDetected = true;
+        mouseDetected = false;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        mouseDetected = false;
+        mouseDetected = true;
     }
 
 }

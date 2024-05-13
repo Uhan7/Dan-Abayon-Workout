@@ -56,6 +56,7 @@ public class GameMaster : MonoBehaviour
     public void Start()
     {
         gameEnd = false;
+        Time.timeScale = 1;
 
         gainzMultiplier = 1;
         gainz = 0;
@@ -162,9 +163,7 @@ public class GameMaster : MonoBehaviour
         // disable possible reps
     // Activate win screen !!!!!!
         winScreen.SetActive(true);
-        // win screen has
-            // reset prompt
-            // time taken to be gigachad
+        Time.timeScale = 0;
         yield return null;
     }
 

@@ -6,7 +6,7 @@ using TMPro;
 
 public class Stopwatch : MonoBehaviour
 {
-    private float stopwatchTime;
+    public float stopwatchTime;
 
     public TextMeshProUGUI stopwatchTimeText;
 
@@ -19,15 +19,15 @@ public class Stopwatch : MonoBehaviour
     {
         stopwatchTimeText.text = "Time Elapsed Before ASCENSION : " + GetMinutes(stopwatchTime).ToString() + "m " +
             GetSeconds(stopwatchTime).ToString() + "s";
-        stopwatchTime += Time.unscaledDeltaTime;
+        stopwatchTime += Time.deltaTime;
     }
 
-    int GetMinutes(float time)
+    public int GetMinutes(float time)
     {
         return Mathf.FloorToInt(time / 60);
     }
 
-    int GetSeconds(float time)
+    public int GetSeconds(float time)
     {
         return Mathf.FloorToInt(time % 60);
     }
